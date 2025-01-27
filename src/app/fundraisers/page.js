@@ -7,7 +7,7 @@ import { FaSearch, FaTimes } from 'react-icons/fa'
 function Fundraisers() {
   const [searchTerm, setSearchTerm] = useState('')
   const [filter, setFilter] = useState('newest')
-  console.log('🚀 ~ Fundraisers ~ filter:', filter)
+
   const [cards, setCard] = useState([
     {
       id: 1,
