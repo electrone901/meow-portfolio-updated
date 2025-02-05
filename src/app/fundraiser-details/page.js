@@ -32,7 +32,7 @@ function FundraiserDetails() {
   const handleDonate = () => {}
 
   const handlePlay = () => {
-    router.push(`/get-updates`)
+    router.push(`/cat-selection`)
   }
 
   const getDonationProgress = (targetAmmount, currentDonations) => {
