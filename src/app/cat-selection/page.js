@@ -16,7 +16,7 @@ function CatSelection() {
   ]
 
   const setImage = async () => {
-    router.push('/status-cat')
+    router.push('/cat-name')
   }
 
   return (
@@ -56,7 +56,7 @@ function CatSelection() {
       </div>
       <div className="flex items-center justify-center mt-16 ">
         <button
-          className={`bg-gray-400 text-white border-2 border-white hover:bg-gray-700 px-4 py2
+          className={`bg-gray-400 text-white border-2 border-white hover:bg-gray-700 px-4 py-2
         rounded-lg transition duration-300 ease-in-out w-[140px] sm:w-[160px] md:w-[180px] ${
           selectedImage === -1 ? 'opacity-50 cursor-not-allowed' : ''
         }`}
