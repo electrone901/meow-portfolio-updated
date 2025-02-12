@@ -9,8 +9,10 @@ function CatName() {
   const [name, selectName] = useState('')
   const user = {}
   const data = { front: '/cat 001.png' }
-  const setImage = () => {
-    console.log('clci')
+  const saveToDatabase = () => {
+    console.log('clci', name)
+    // saveToDatabase and redirect
+    router.push('/confirmation')
   }
 
   return (
@@ -46,7 +48,7 @@ function CatName() {
         rounded-lg transition duration-300 ease-in-out w-[140px] sm:w-[180px] md:w-[190px] ${
           name === '' ? 'opacity-50 cursor-not-allowed' : ''
         }`}
-          onClick={setImage}
+          onClick={saveToDatabase}
           disabled={name === ''}
         >
           Next
