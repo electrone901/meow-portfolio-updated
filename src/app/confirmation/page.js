@@ -59,28 +59,29 @@ function Confirmation() {
                 </p>
               </div>
 
-              <div className="flex items-center justify-center bg-[#F5F1F1] mb-4">
-                <div className="w-auto py-6">
+              <div className="flex items-center justify-center bg-[#F5F1F1] mb-4 flex-wrap ">
+                <div className="w-auto py-6 flex justify-center sm:w-[30px] md:w-[60px] lg:w-[80px]">
                   <Image
                     src="calendar.svg"
                     width={40}
                     height={40}
                     alt="calendar icon"
+                    className="w-full h-auto"
                   />
                 </div>
 
-                <div className="w-[30%]">
-                  <p className="font-semibold text-2xl text-black px-4 py-3">
+                <div className="w-[30%] sm:w-[40%] md:w-[40%] lg:w-[40%] px-4 py-3">
+                  <p className="font-semibold text-sm sm:text-xl md:text-xl lg:text-2xl text-black">
                     Daily log text
                   </p>
                 </div>
 
-                <div className="w-[20%]">
-                  <p>+ 1 point</p>
+                <div className="w-[20%] sm:w-[30%] md:w-[20%] lg:w-[20%] py-3 text-left">
+                  <p className=" text-sm sm:text-xl md:text-xl">+ 1 point</p>
                 </div>
 
-                <div className="w-auto text-4xl">
-                  <MdKeyboardDoubleArrowRight />
+                <div className="w-auto py-6 flex justify-center sm:w-[30px] md:w-[40px] lg:w-[40px]">
+                  <MdKeyboardDoubleArrowRight className="w-full h-auto" />
                 </div>
               </div>
             </div>
