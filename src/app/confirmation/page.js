@@ -2,26 +2,28 @@
 import React, { useState } from 'react'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
-import { MdKeyboardDoubleArrowRight } from 'react-icons/md'
-import { HiArrowCircleRight } from 'react-icons/hi'
-
-import { HiArrowDownCircle } from 'react-icons/hi2'
-import { FiChevronUp, FiChevronDown } from 'react-icons/fi'
 import { BsHeartFill } from 'react-icons/bs'
+import EarnPointsCard from '@/src/components/EarnPointsCard'
 
 function Confirmation() {
   const router = useRouter()
-  const [selected, setSelected] = useState(Number(-1))
-  const [selectedFood, setSelectedFood] = useState('')
-  const [showDailyLogin, setShowDailyLogin] = useState(false)
-  const [showDailyQuiz, setShowDailyQuiz] = useState(false)
   const points = '100'
 
   return (
-    <div>
-      <p className="text-right mr-40 mt-10 ">Current Points: {points}</p>
+    <div
+      className="bg-cover bg-repeat-y h-screen"
+      style={{
+        backgroundImage: `url(${'background.jpg'})`,
+        // backgroundSize: 'cover',
+        // backgroundRepeat: 'no-repeat',
+        // height: 'auto', // Set to full height of the viewport
+      }}
+    >
+      <p className="text-right mr-4 mt-10 sm:mr-20 md:mr-40 lg:mr-40">
+        Current Points: {points}
+      </p>
       <div className="flex items-center justify-center">
-        <div className="w-full sm-w[70%] mt-10 px-4">
+        <div className="w-[90%] sm-w[70%] mt-10 px-4 ">
           <p
             className="font-semibold text-3xl text-black
           pt-8 pb-10 text-center"
@@ -30,6 +32,7 @@ function Confirmation() {
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+            {/* grid col 1 */}
             <div className="col-span-1 sm:col-span-2 lg:col-span-2 flex flex-col items-center  ">
               <p className="font-semibold text-xl sm:text-2xl text-black text-center mb-4">
                 MOMOTO.
@@ -40,7 +43,7 @@ function Confirmation() {
                   width={1900}
                   height={1900}
                   alt="pet image"
-                  className="object-cover w-[80%] sm:w-[70%] md:w-[60%] lg:w-[80%] h-auto"
+                  className="object-cover w-[60%] sm:w-[50%] md:w-[40%] lg:w-[60%]"
                 />
               </div>
               <div className="relative z-1 flex items-center ">
@@ -52,41 +55,51 @@ function Confirmation() {
               </div>
             </div>
 
+            {/* grid col 2 */}
             <div className="bg-white border-8 border-[#FED595] rounded-md col-span-1 sm:col-span-2 lg:col-span-3">
+              {/* header */}
               <div className="flex items-center justify-center bg-[#F5F1F1] mb-4">
-                <p className="font-semibold text-2xl text-black px-2 py-6   ">
+                <p className="font-semibold text-2xl text-black px-2 py-6">
                   Earn Daily Points
                 </p>
               </div>
 
-              <div className="flex items-center justify-center bg-[#F5F1F1] mb-4 flex-wrap ">
-                <div className="w-auto py-6 flex justify-center sm:w-[30px] md:w-[60px] lg:w-[80px]">
-                  <Image
-                    src="calendar.svg"
-                    width={40}
-                    height={40}
-                    alt="calendar icon"
-                    className="w-full h-auto"
-                  />
-                </div>
+              {/* one col */}
+              <EarnPointsCard
+                iconSource="calendar.svg"
+                name="Daily log text"
+                description="+ 1 point"
+              />
+              <EarnPointsCard
+                iconSource="quiz.svg"
+                name="Daily quiz"
+                description="+ 5 points"
+              />
+              <EarnPointsCard
+                iconSource="feedcat.svg"
+                name="Feed cat"
+                description="+ 10 points"
+              />
 
-                <div className="w-[30%] sm:w-[40%] md:w-[40%] lg:w-[40%] px-4 py-3">
-                  <p className="font-semibold text-sm sm:text-xl md:text-xl lg:text-2xl text-black">
-                    Daily log text
-                  </p>
-                </div>
-
-                <div className="w-[20%] sm:w-[30%] md:w-[20%] lg:w-[20%] py-3 text-left">
-                  <p className=" text-sm sm:text-xl md:text-xl">+ 1 point</p>
-                </div>
-
-                <div className="w-auto py-6 flex justify-center sm:w-[30px] md:w-[40px] lg:w-[40px]">
-                  <MdKeyboardDoubleArrowRight className="w-full h-auto" />
-                </div>
+              {/* Footer */}
+              <div className="flex items-center justify-center bg-[#F5F1F1] mb-0">
+                <p className="text-sm md:text-xl text-black px-2 py-4">
+                  Use your points to personalize your experience
+                </p>
               </div>
             </div>
           </div>
         </div>
+      </div>
+
+      <div className="flex items-center justify-center my-10 sm:my-10 md:my-16">
+        <button
+          className={`bg-gray-400 text-white border-2 border-white hover:bg-gray-700 px-4 py-2
+        rounded-lg transition duration-300 ease-in-out w-[180px] sm:w-[220px] md:w-[230px]`}
+          onClick={() => router.push('/play-dashboard')}
+        >
+          Play
+        </button>
       </div>
     </div>
   )
