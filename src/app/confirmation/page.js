@@ -1,9 +1,8 @@
 'use client'
-import React, { useState } from 'react'
-import Image from 'next/image'
+import React from 'react'
 import { useRouter } from 'next/navigation'
-import { BsHeartFill } from 'react-icons/bs'
 import EarnPointsCard from '@/src/components/EarnPointsCard'
+import CatProfile from '@/src/components/CatProfile'
 
 function Confirmation() {
   const router = useRouter()
@@ -14,9 +13,6 @@ function Confirmation() {
       className="bg-cover bg-repeat-y h-screen"
       style={{
         backgroundImage: `url(${'background.jpg'})`,
-        // backgroundSize: 'cover',
-        // backgroundRepeat: 'no-repeat',
-        // height: 'auto', // Set to full height of the viewport
       }}
     >
       <p className="text-right mr-4 mt-10 sm:mr-20 md:mr-40 lg:mr-40">
@@ -33,26 +29,8 @@ function Confirmation() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
             {/* grid col 1 */}
-            <div className="col-span-1 sm:col-span-2 lg:col-span-2 flex flex-col items-center  ">
-              <p className="font-semibold text-xl sm:text-2xl text-black text-center mb-4">
-                MOMOTO.
-              </p>
-              <div className="flex items-center justify-center mb-4">
-                <Image
-                  src="/cat 001.png"
-                  width={1900}
-                  height={1900}
-                  alt="pet image"
-                  className="object-cover w-[60%] sm:w-[50%] md:w-[40%] lg:w-[60%]"
-                />
-              </div>
-              <div className="relative z-1 flex items-center ">
-                <BsHeartFill color="red" fontSize={25} className="ml-1" />
-                <BsHeartFill color="gray" fontSize={25} className="ml-1" />
-                <BsHeartFill color="gray" fontSize={25} className="ml-1" />
-                <BsHeartFill color="gray" fontSize={25} className="ml-1" />
-                <BsHeartFill color="gray" fontSize={25} className="ml-1" />
-              </div>
+            <div className="col-span-1 sm:col-span-2 lg:col-span-2 ">
+              <CatProfile />
             </div>
 
             {/* grid col 2 */}
@@ -64,7 +42,7 @@ function Confirmation() {
                 </p>
               </div>
 
-              {/* one col */}
+              {/* one row */}
               <EarnPointsCard
                 iconSource="calendar.svg"
                 name="Daily log text"
